@@ -1,0 +1,46 @@
+#pagarContacto {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+label {
+  margin: 15px 15px 15px 0;
+  font-size: 1.5rem;
+}
+
+label.error {
+  color: red;
+  font-size: 1rem;
+  display: block;
+  margin-top: 5px;
+}
+
+input.error, textarea.error {
+  border: 2px solid red;
+  font-weight: 300;
+  color: red;
+}
+
+#botonPagar {
+  border: 4px solid #C39E5C;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: #91091E;
+  color: white;
+  font-weight: 300;
+  padding: 10px;
+  width: 25%;
+}
+
+.dni, .nombreCompleto, .nroTarjeta, .codigoTarjeta, .fechaTarjeta {
+  border: 2px solid #111D5E;
+  border-radius: 25px;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

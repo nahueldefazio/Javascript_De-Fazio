@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none !important;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subMenus {
+  align-content: flex-end;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#imagenNav {
+  width: 50px;
+  height: 50px;
+}
+
+.tituloPrincipal {
+  text-align: center;
+  padding: 15px;
+}
+
+#usuarioBienvenida {
+  width: 46%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.usuario {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #FDF1D6;
+}
+
+.usuario_index {
+  text-align: center;
+  font-size: 1.4rem;
+  padding-bottom: 20px;
+  color: #111D5E;
+}
+
+.alert-secondary {
+  background-color: #91091E;
+  text-align: center;
+}
+
+#index .buttonPrincipal {
+  width: 302px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-left: 50%;
+  margin-right: 50%;
+  border-radius: 100px;
+  transform: translate(-50%, -50%);
+  padding: 5px 35px 5px 35px;
+  background-color: #91091E;
+  border-width: 3px;
+  border-color: #C39E5C;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+a {
+  margin-left: auto;
+  margin-right: auto;
+  color: #FDF1D6;
+}
+
+#index .buttonTipo a {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.card {
+  border-radius: 40px;
+  border-width: thick;
+  border-color: #C39E5C;
+  background-color: #91091E;
+  color: #FDF1D6;
+}
+
+.card-img-top {
+  width: 250px;
+  height: 185px;
+  border-radius: 40px;
+  border-width: thick;
+  border-color: black;
+}
+
+.btn {
+  background-color: #111D5E;
+  border-color: #C39E5C;
+  color: #FDF1D6;
+}
+
+.botonCarrito {
+  background-color: #F44336;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background: #F44336;
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-size: 36px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: 0.3s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  float: right;
+  position: sticky;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+#cantidad {
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  position: absolute;
+  background-color: #111D5E;
+  border-radius: 50%;
+}
+
+.form-control {
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin: auto;
+  width: 40%;
+}
+
+.mb-2 {
+  height: 39px;
+}
+
+.claseBorrar:hover {
+  color: red;
+}

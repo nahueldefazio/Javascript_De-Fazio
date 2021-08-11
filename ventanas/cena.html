@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- GOOGLE ICON -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Cena - Bar Jose Ingenieros</title>
+</head>
+<body>
+<header>
+    <a href="../index.html"><img class="logo" src="../imagenes/bar.jpg" alt="Bar Jose Ingenieros"></a>
+</header>
+
+<h1 class="tituloPrincipal"> Cena/Almuerzo </h1>
+<div id="usuarioBienvenida"></div>
+<h2> Comidas </h2>
+<select onchange="ordenarPorPrecio(comidas,ordenarComidas, cardList_string)" id="ordenamientoComidas">
+    <option value="0">--Seleccione una opción--</option>
+    <option value="ascendente">ORDENAR: Menor a Mayor</option>
+    <option value="descendente">ORDENAR: Mayor a Menor</option>
+</select>
+<div class="row" id="cardList"></div>
+<h2> Bebidas </h2>
+<select onchange="ordenarPorPrecio(bebidas, ordenarBebidas, cardList2_string)" id="ordenamientoBebidas">
+    <option value="0">--Seleccione una opción--</option>
+    <option value="ascendente">ORDENAR: Menor a Mayor</option>
+    <option value="descendente">ORDENAR: Mayor a Menor</option>
+</select>
+<div class="row" id="cardList2"></div>
+<h2> Postres </h2>
+<select onchange="ordenarPorPrecio(postres, ordenarPostres, cardList3_string)" id="ordenamientoPostres">
+    <option value="0">--Seleccione una opción--</option>
+    <option value="ascendente">ORDENAR: Menor a Mayor</option>
+    <option value="descendente">ORDENAR: Mayor a Menor</option>
+</select>
+<div class="row" id="cardList3"></div>
+<button class="botonCarrito" onclick="mostrarCarrito()">
+    <span class="material-icons"> shopping_cart </span>
+</button>
+<!-- JQuery -->
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="../script_cena.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<!-- SWEET2 ALERT -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

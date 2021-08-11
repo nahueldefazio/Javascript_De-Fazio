@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Vacio",
+    "detalle": "Carne",
+    "cantidad": 3,
+    "precio": 990
+  },
+  {
+    "nombre": "Milanesa",
+    "detalle": "Carne",
+    "cantidad": 3,
+    "precio": 610
+  },
+  {
+    "nombre": "Suprema",
+    "detalle": "Pollo",
+    "cantidad": 3,
+    "precio": 610
+  },
+  {
+    "nombre": "Filet",
+    "detalle": "Pescado",
+    "cantidad": 3,
+    "precio": 570
+  },
+  {
+    "nombre": "Ravioles",
+    "detalle": "Verdura y pollo",
+    "cantidad": 3,
+    "precio": 700
+  }
+]
