@@ -26,6 +26,11 @@
   padding: 15px;
 }
 
+#menuIndex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 #usuarioBienvenida {
   width: 46%;
   margin-left: auto;

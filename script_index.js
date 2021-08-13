@@ -21,6 +21,7 @@ function verificarLogueo(){
         div.classList.add("usuario_index")
         div.innerHTML = `<h1>Bienvenido/a ${localStorage.getItem('nombre')}</h1>`
         document.getElementById("usuario").appendChild(div);
+        $('#usuario').hide().fadeIn(1000); // ANIMACION JQUERY
     } else {
         solicitarNombre();
     }

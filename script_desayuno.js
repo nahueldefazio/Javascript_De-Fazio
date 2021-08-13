@@ -10,6 +10,24 @@ class Comida {
 
 }
 
+
+$('#comidasIndex').click(function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $('#comidasMenu').offset().top
+    }, 200)
+})
+
+$('#bebidasIndex').click(function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $('#bebidasMenu').offset().top
+    }, 400)
+})
+
+
+
+
 let usuario =  localStorage.getItem("nombre")
 let contenedor2 = document.createElement("div");
 contenedor2.classList.add("alert");

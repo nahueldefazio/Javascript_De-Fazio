@@ -4,12 +4,35 @@ class Comida {
         this.detalle = detalle;
         this.cantidad = cantidad;
         this.precio = precio;
-        this.disponible = true;
-        this.desayunoMerienda = true;
-        this.almuerzoCena = true;
     }
 
 }
+
+$('#comidasIndex').click(function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $('#comidasMenu').offset().top
+    }, 200)
+})
+
+$('#bebidasIndex').click(function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $('#bebidasMenu').offset().top
+    }, 400)
+})
+
+$('#postresIndex').click(function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $('#postresMenu').offset().top
+    }, 300)
+})
+
+
+
+
+
 
 let usuario =  localStorage.getItem("nombre")
 let contenedor2 = document.createElement("div");
@@ -169,6 +192,7 @@ let postres = [
                                           </div>`
             //Agrego
             document.getElementById(nombreDiv).appendChild(contenedor);
+
         })
         //console.log(Object.values(json))
     }

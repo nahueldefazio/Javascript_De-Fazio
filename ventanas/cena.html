@@ -17,21 +17,27 @@
 
 <h1 class="tituloPrincipal"> Cena/Almuerzo </h1>
 <div id="usuarioBienvenida"></div>
-<h2> Comidas </h2>
+<div id="menuIndex">
+    <button id="comidasIndex" class="btn btn-primary">COMIDAS</button>
+    <button id="bebidasIndex" class="btn btn-primary">BEBIDAS</button>
+    <button id="postresIndex" class="btn btn-primary">POSTRES</button>
+</div>
+
+<h2 id="comidasMenu"> Comidas </h2>
 <select onchange="ordenarPorPrecio(comidas,ordenarComidas, cardList_string)" id="ordenamientoComidas">
     <option value="0">--Seleccione una opción--</option>
     <option value="ascendente">ORDENAR: Menor a Mayor</option>
     <option value="descendente">ORDENAR: Mayor a Menor</option>
 </select>
 <div class="row" id="cardList"></div>
-<h2> Bebidas </h2>
+<h2 id="bebidasMenu"> Bebidas </h2>
 <select onchange="ordenarPorPrecio(bebidas, ordenarBebidas, cardList2_string)" id="ordenamientoBebidas">
     <option value="0">--Seleccione una opción--</option>
     <option value="ascendente">ORDENAR: Menor a Mayor</option>
     <option value="descendente">ORDENAR: Mayor a Menor</option>
 </select>
 <div class="row" id="cardList2"></div>
-<h2> Postres </h2>
+<h2 id="postresMenu"> Postres </h2>
 <select onchange="ordenarPorPrecio(postres, ordenarPostres, cardList3_string)" id="ordenamientoPostres">
     <option value="0">--Seleccione una opción--</option>
     <option value="ascendente">ORDENAR: Menor a Mayor</option>
