@@ -28,20 +28,20 @@ $('body').append(`<main id="pagarContacto">
                             </form>
                        </main>`)
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("#contacto").validate({
         rules: {
-            nombre: { required: true, minlength: 2},
-            codigoTarjeta: { required:true, maxlength: 3, minlength: 3},
-            nroTajeta: {required:true,maxlength: 16, minlength: 16},
-            dni: {required:true},
-            fecha : true
+            nombre: {required: true, minlength: 2},
+            codigoTarjeta: {required: true, maxlength: 3, minlength: 3},
+            nroTajeta: {required: true, maxlength: 16, minlength: 16},
+            dni: {required: true},
+            fecha: true
         },
         messages: {
             nombre: "El campo es obligatorio.",
-            codigoTarjeta : "Su codigo de seguridad es incorrecto.",
-            nroTajeta : "El numero de la tarjeta no es correcto.",
-            fecha : "Fecha invalida",
+            codigoTarjeta: "Su codigo de seguridad es incorrecto.",
+            nroTajeta: "El numero de la tarjeta no es correcto.",
+            fecha: "Fecha invalida",
             dni: "Ingrese un DNI correcto."
         }
     });

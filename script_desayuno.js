@@ -1,4 +1,3 @@
-
 class Comida {
     constructor(nombre, detalle, cantidad, precio) {
         this.nombre = nombre;
@@ -10,25 +9,7 @@ class Comida {
 
 }
 
-
-$('#comidasIndex').click(function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: $('#comidasMenu').offset().top
-    }, 200)
-})
-
-$('#bebidasIndex').click(function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: $('#bebidasMenu').offset().top
-    }, 400)
-})
-
-
-
-
-let usuario =  localStorage.getItem("nombre")
+let usuario = localStorage.getItem("nombre")
 let contenedor2 = document.createElement("div");
 contenedor2.classList.add("alert");
 contenedor2.classList.add("alert-secondary");
@@ -44,7 +25,7 @@ let bebidas = [
         "detalle": "Cafe",
         "cantidad": 10,
         "precio": 70,
-        "imagen" : "../imagenes/cafe.jpg"
+        "imagen": "../imagenes/cafe.jpg"
     },
     {
         "id": 2,
@@ -52,7 +33,7 @@ let bebidas = [
         "detalle": "Cafe con whisky y crema",
         "cantidad": 6,
         "precio": 370,
-        "imagen" : "../imagenes/cafe_irlandes.jpg"
+        "imagen": "../imagenes/cafe_irlandes.jpg"
     },
     {
         "id": 3,
@@ -60,7 +41,7 @@ let bebidas = [
         "detalle": "Sabor original",
         "cantidad": 10,
         "precio": 120,
-        "imagen" : "../imagenes/te.jpg"
+        "imagen": "../imagenes/te.jpg"
     },
     {
         "id": 4,
@@ -68,7 +49,7 @@ let bebidas = [
         "detalle": "Cafe",
         "cantidad": 4,
         "precio": 200,
-        "imagen" : "../imagenes/capuchino.jpg"
+        "imagen": "../imagenes/capuchino.jpg"
     },
     {
         "id": 5,
@@ -76,7 +57,7 @@ let bebidas = [
         "detalle": "Cafe con chocolate",
         "cantidad": 6,
         "precio": 300,
-        "imagen" : "../imagenes/submarino.jpeg"
+        "imagen": "../imagenes/submarino.jpeg"
     },
 ]
 
@@ -87,7 +68,7 @@ let comidas = [
         "detalle": "Panaderia",
         "cantidad": 10,
         "precio": 60,
-        "imagen" : "../imagenes/medialunas.jfif"
+        "imagen": "../imagenes/medialunas.jfif"
     },
     {
         "id": 7,
@@ -95,7 +76,7 @@ let comidas = [
         "detalle": "Tostado",
         "cantidad": 7,
         "precio": 240,
-        "imagen" : "../imagenes/tostado_jyq.jpg"
+        "imagen": "../imagenes/tostado_jyq.jpg"
     },
     {
         "id": 8,
@@ -103,7 +84,7 @@ let comidas = [
         "detalle": "Mermelada de frambuesa o durazno",
         "cantidad": 6,
         "precio": 70,
-        "imagen" : "../imagenes/tostadas_mermelada.jpg"
+        "imagen": "../imagenes/tostadas_mermelada.jpg"
     },
     {
         "id": 9,
@@ -111,12 +92,12 @@ let comidas = [
         "detalle": "A la plancha",
         "cantidad": 4,
         "precio": 130,
-        "imagen" : "../imagenes/huevos_revueltos.jpg"
+        "imagen": "../imagenes/huevos_revueltos.jpg"
     },
 ]
 
-function listarProductos(json,nombreDiv, tipo){
-    json.forEach((producto,index) => {
+function listarProductos(json, nombreDiv, tipo) {
+    json.forEach((producto, index) => {
         //Creo
         let contenedor = document.createElement("div");
         //Modifico
@@ -126,7 +107,7 @@ function listarProductos(json,nombreDiv, tipo){
         contenedor.style.width = "18rem";
         contenedor.innerHTML = `<img src="${producto.imagen}" class="card-img-top" alt="...">
                                           <div class="card-body">
-                                            <h5 class="card-title">${producto.nombre}</h5>
+                                              <h5 class="card-title">${producto.nombre}</h5>
                                               <p class="card-text">${producto.detalle}</p>
                                               <select id="producto${producto.id}">
                                               <option value="1"> 1 </option>
@@ -135,29 +116,30 @@ function listarProductos(json,nombreDiv, tipo){
                                               <option value="4"> 4 </option>
                                               <option value="5"> 5 </option>
                                               </select>
-                                              <p class="card-text">${producto.precio} $</p>
-                                              <div id = "accionesProducto${producto.id}">
-                                               <a href="#" class="btn btn-primary" onclick="agregarCarrito('${producto.nombre}',${producto.id},${producto.precio},${index},${tipo})">Ordenar</a>
-                                              </div>
+                                              <p class="card-text">${producto.precio} $</p>                                              
+                                               <div id = "accionesProducto${producto.id}">
+                                                    <a href="#" class="btn btn-primary" onclick="agregarCarrito('${producto.nombre}',${producto.id},${producto.precio},${index},${tipo})">Ordenar</a>
+                                               </div>
                                           </div>`
         //Agrego
         document.getElementById(nombreDiv).appendChild(contenedor);
     })
 
 }
-listarProductos(comidas, "cardList","comidas");
-listarProductos(bebidas, "cardList2","bebidas");
+
+listarProductos(comidas, "cardList", "comidas");
+listarProductos(bebidas, "cardList2", "bebidas");
 
 
-function borrarProductos(nombreDiv){
+function borrarProductos(nombreDiv) {
     document.getElementById(nombreDiv).innerHTML = '';
 }
 
-function consultarStock(productoId,productoIdx,tipo){
+function consultarStock(productoId, productoIdx, tipo) {
 
     let value = document.getElementById(`producto${productoId}`).value
     console.log(tipo[productoIdx])
-    if(tipo[productoIdx].cantidad <= value){
+    if (tipo[productoIdx].cantidad <= value) {
         alert('El stock no es suficiente para realizar el pedido');
         return true;
     } else {
@@ -174,31 +156,29 @@ let ordenarBebidas = "ordenamientoBebidas"
 let cardList2_string = "cardList2"
 
 
-
 //Ordenar por precio
 function ordenarPorPrecio(productos, string, string_2) {
     let ordenamiento = document.getElementById(string).value
-    if(ordenamiento === "ascendente"){
-        productos = productos.sort (function (a,b) {
+    if (ordenamiento === "ascendente") {
+        productos = productos.sort(function (a, b) {
             return a.precio - b.precio;
         });
-    } else if(ordenamiento === "descendente") {
-        productos = productos.sort (function (a,b) {
+    } else if (ordenamiento === "descendente") {
+        productos = productos.sort(function (a, b) {
             return b.precio - a.precio;
         });
     }
     borrarProductos(string_2);
-    listarProductos( productos, string_2);
+    listarProductos(productos, string_2);
 }
 
 let carro = [];
 
 
-function agregarCarrito(nombre,id,precio,index,tipo) {
-    if(consultarStock(id,index,tipo)){
+function agregarCarrito(nombre, id, precio, index, tipo) {
+    if (consultarStock(id, index, tipo)) {
         return;
-    }
-    else {
+    } else {
         let producto = {
             id,
             nombre,
@@ -221,19 +201,19 @@ function calcularTotal() {
     return total;
 }
 
-function listaProductos(){
+function listaProductos() {
     let listado = '';
     carro.forEach(producto => {
         listado += producto.cantidad + 'x ' + producto.nombre + "\n";
     })
-    return listado ;
+    return listado;
 }
 
 
 function mostrarCantidadCarro() {
     let total = 0;
     carro.forEach(producto => {
-        total += parseInt(producto.cantidad) ;
+        total += parseInt(producto.cantidad);
     })
     return total;
 }
@@ -246,7 +226,7 @@ $('.botonCarrito').append(`<span id = "cantidad"> ${mostrarCantidadCarro()} </sp
 
 
 function mostrarBotonBorrar(idproducto) {
-    if (!$("#botonBorrar"+idproducto).length)
+    if (!$("#botonBorrar" + idproducto).length)
         $("#accionesProducto" + idproducto).append(`<button id="botonBorrar${idproducto}" class="btn claseBorrar" onclick="borrarProductoCarrito(${idproducto})"> BORRAR </button>`)
 }
 
@@ -257,8 +237,6 @@ function borrarProductoCarrito(id) {
     $("#botonBorrar" + id).remove();
 
 }
-
-
 
 
 function mostrarCarrito() {
@@ -272,7 +250,7 @@ function mostrarCarrito() {
     })
 
     swalWithBootstrapButtons.fire({
-        title: "Has ordenado " + "\n"  + listaProductos(),
+        title: "Has ordenado " + "\n" + listaProductos(),
         text: "Total : " + calcularTotal() + " $",
         icon: 'warning',
         showCancelButton: true,

@@ -1,0 +1,40 @@
+[{
+  "id": 6,
+  "nombre": "Agua",
+  "detalle": "Agua mineral Villavicencio",
+  "cantidad": 10,
+  "precio": 110,
+  "imagen" : "../imagenes/agua.jpg"
+},
+{
+"id": 7,
+"nombre": "Coca-Cola",
+"detalle": "Gaseosa con sabor original de coca",
+"cantidad": 8,
+"precio": 160,
+"imagen" : "../imagenes/coca.jpg"
+},
+{
+"id": 8,
+"nombre": "Levite",
+"detalle": "Agua saborizada",
+"cantidad": 9,
+"precio": 170,
+"imagen" : "../imagenes/levite.jpg"
+},
+{
+"id": 9,
+"nombre": "Sprite",
+"detalle": "Gaseosa sabor limalimon",
+"cantidad": 7,
+"precio": 160,
+"imagen" : "../imagenes/sprite.jpg"
+},
+{
+"id": 10,
+"nombre": "Fanta",
+"detalle": "Gaseosa sabor naranja",
+"cantidad": 6,
+"precio": 160,
+"imagen" : "../imagenes/fanta.png"
+}]

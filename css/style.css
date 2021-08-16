@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   text-decoration: none !important;
+  font-family: "Vollkorn", serif;
+}
+
+body {
+  margin-left: 10px;
 }
 
 .logo {
@@ -24,11 +29,6 @@
 .tituloPrincipal {
   text-align: center;
   padding: 15px;
-}
-
-#menuIndex {
-  display: flex;
-  justify-content: space-evenly;
 }
 
 #usuarioBienvenida {
@@ -85,25 +85,32 @@ a {
 }
 
 .card {
-  border-radius: 40px;
   border-width: thick;
   border-color: #C39E5C;
   background-color: #91091E;
   color: #FDF1D6;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .card-img-top {
   width: 250px;
   height: 185px;
-  border-radius: 40px;
+  border-radius: 20px;
   border-width: thick;
-  border-color: black;
+  border-color: #C39E5C;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  color: greenyellow;
 }
 
 .btn {
   background-color: #111D5E;
-  border-color: #C39E5C;
   color: #FDF1D6;
+  border: 0;
 }
 
 .botonCarrito {
@@ -122,7 +129,7 @@ a {
   float: right;
   position: sticky;
   bottom: 1rem;
-  right: 1rem;
+  right: 2rem;
 }
 
 #cantidad {
@@ -149,4 +156,19 @@ a {
 
 .claseBorrar:hover {
   color: red;
+}
+
+.neon {
+  animation: neonAnim 2s alternate-reverse infinite;
+  color: #F9FDFA;
+  font-size: 17px;
+}
+
+@keyframes neonAnim {
+  from {
+    text-shadow: 0 0 13px rgba(18, 253, 52, 0.7), 0 0 43px rgba(18, 253, 52, 0.7), 0 0 103px rgba(18, 253, 52, 0.7);
+  }
+  to {
+    text-shadow: 0 0 8px rgba(18, 253, 52, 0.7), 0 0 23px rgba(18, 253, 52, 0.7), 0 0 63px rgba(18, 253, 52, 0.7);
+  }
 }
