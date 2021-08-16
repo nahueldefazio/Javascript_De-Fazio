@@ -2,15 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- GOOGLE ICON -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap" rel="stylesheet">
+
     <title>Sobre nosotros - Bar Jose Ingenieros</title>
 </head>
 <body>
-    <h1> ¿Quienes somos?</h1>
-    <div id="barCalle">
-        <img src="../imagenes/bar-de-esquina.jpg" alt="Foto del bar desde la esquina">
-    </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci ea eligendi est expedita
-        explicabo inventore molestiae, necessitatibus nesciunt optio placeat provident quam, quas quibusdam quisquam quos repellat reprehenderit sunt!</p>
+<header>
+    <nav class="navbar navbar-dark sticky">
+        <div class="container-fluid">
+            <a href="../index.html">
+                <img src="/imagenes/logo-navbar.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse subMenus" id="navbarNavAltMarkup">
+                <div class="navbar-nav d-flex">
+                    <a class="nav-link active subMenus" aria-current="page" href="../index.html">INICIO</a>
+                    <a class="nav-link subMenus" href="nosotros.html">¿ QUIENES SOMOS ?</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<h1> ¿Quienes somos?</h1>
+<div id="barCalle">
+    <img src="../imagenes/bar-de-esquina.jpg" alt="Foto del bar desde la esquina">
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci ea eligendi est expedita
+    explicabo inventore molestiae, necessitatibus nesciunt optio placeat provident quam, quas quibusdam quisquam quos
+    repellat reprehenderit sunt!Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo,
+    maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
+    Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo.
+    Atqui causae gloriatur ius te, id agam omnis evertitur eum.</p>
 
+<!-- JQuery -->
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<!-- SWEET2 ALERT -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- AlertifyJS ALERT -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<footer class="footerIndex">
+    <div id="redesSociales">
+        <a href="https://www.facebook.com/" target="_blank"> Facebook
+            <img src="../imagenes/facebook_logo_icon_181652.png" alt="facebook" width="50" height="50">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank"> Instagram
+            <img src="../imagenes/instagram_ig_logo_icon_181651.png" alt="instagram" width="50" height="50">
+        </a>
+        <a href="https://wa.me/5491159560376" target="_blank"> WhatsApp
+            <img src="../imagenes/whatsapp_logo_icon_181644.png" alt="whatsapp" width="50" height="50">
+        </a>
+    </div>
+    <div id="derechoAutor">
+        <small>Copyright © Nahuel De Fazio - Frontend Developer</small>
+    </div>
+</footer>
 </body>
 </html>

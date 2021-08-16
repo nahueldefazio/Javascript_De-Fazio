@@ -5,11 +5,26 @@
   font-family: "Vollkorn", serif;
 }
 
-body {
-  margin-left: 20px;
+.cuerpo {
+  background-image: url("../imagenes/white-wall.jpg");
+  padding-top: 90px;
+}
+
+.sticky {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 2 !important;
+  background: black;
+  background: linear-gradient(180deg, black 49%, #868585 100%);
+}
+
+a:hover {
+  color: #111D5E;
 }
 
 .logo {
+  padding-top: 90px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -19,6 +34,7 @@ body {
   align-content: flex-end;
   flex-wrap: wrap;
   flex-direction: column;
+  color: #F9FDFA !important;
 }
 
 #menuIndex {
@@ -57,6 +73,7 @@ body {
   text-align: center;
   font-size: 1.4rem;
   padding-bottom: 20px;
+  padding-top: 20px;
   color: #111D5E;
 }
 
@@ -128,7 +145,6 @@ a {
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  background: #F44336;
   border: none;
   outline: none;
   color: #FFF;
@@ -138,8 +154,8 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   float: right;
   position: sticky;
-  bottom: 1rem;
-  right: 2rem;
+  bottom: 2rem;
+  right: 3rem;
 }
 
 #cantidad {
@@ -181,4 +197,28 @@ a {
   to {
     text-shadow: 0 0 8px rgba(18, 253, 52, 0.7), 0 0 23px rgba(18, 253, 52, 0.7), 0 0 63px rgba(18, 253, 52, 0.7);
   }
+}
+footer {
+  background: black;
+  background: linear-gradient(0deg, black 49%, #868585 100%);
+}
+
+.footerIndex {
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+}
+
+#redesSociales {
+  display: flex;
+  font-size: 15px;
+  padding: 20px 20px 0;
+}
+
+#derechoAutor {
+  color: #FDF1D6;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  font-size: 14px;
 }

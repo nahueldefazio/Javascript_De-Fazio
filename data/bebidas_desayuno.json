@@ -1,0 +1,42 @@
+[
+  {
+  "id": 1,
+  "nombre": "Cafe",
+  "detalle": "Cafe",
+  "cantidad": 10,
+  "precio": 70,
+  "imagen": "../imagenes/cafe.jpg"
+},
+  {
+    "id": 2,
+    "nombre": "Cafe Irlandes",
+    "detalle": "Cafe con whisky y crema",
+    "cantidad": 6,
+    "precio": 370,
+    "imagen": "../imagenes/cafe_irlandes.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Te",
+    "detalle": "Sabor original",
+    "cantidad": 10,
+    "precio": 120,
+    "imagen": "../imagenes/te.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Capuchino",
+    "detalle": "Cafe",
+    "cantidad": 4,
+    "precio": 200,
+    "imagen": "../imagenes/capuchino.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Submarino",
+    "detalle": "Cafe con chocolate",
+    "cantidad": 6,
+    "precio": 300,
+    "imagen": "../imagenes/submarino.jpeg"
+  }
+]

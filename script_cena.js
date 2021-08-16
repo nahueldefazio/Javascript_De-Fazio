@@ -51,7 +51,6 @@ let comidas = []
 let bebidas = []
 let postres = []
 
-
 //Peticiones con jQuery
 const URLGET_bebidas = "../data/bebidas_cena.json";
 const URLGET_postres = "../data/postres.json";
@@ -59,7 +58,7 @@ const URLGET_comidas = "../data/comidas_cena.json";
 
 function agregarProductos(URL, array_productos){
     $.get(URL, function (datos, estado){
-        if(estado == "success"){
+        if(estado === "success"){
             for (const producto of datos){
                 array_productos.push(producto)
             }
@@ -73,12 +72,9 @@ function agregarProductos(URL, array_productos){
     })
 
 }
-
 agregarProductos(URLGET_comidas, comidas);
 agregarProductos(URLGET_bebidas, bebidas);
 agregarProductos(URLGET_postres, postres);
-
-
 
 function listarProductos(json,nombreDiv, tipo){
         json.forEach((producto,index) => {
@@ -111,9 +107,6 @@ function listarProductos(json,nombreDiv, tipo){
         })
         //console.log(Object.values(json))
 }
-
-
-
 
 function borrarProductos(nombreDiv){
     document.getElementById(nombreDiv).innerHTML = '';
@@ -207,21 +200,19 @@ function mostrarCantidadCarro() {
 function actualizarCarrito() {
     $('#cantidad').text(mostrarCantidadCarro());
 }
-
+//Agrego el circulo de cantidad en el carrito
 $('.botonCarrito').append(`<span id = "cantidad"> ${mostrarCantidadCarro()} </span>`)
 
-
+//Agrego boton "Borrar"
 function mostrarBotonBorrar(idproducto) {
     if (!$("#botonBorrar"+idproducto).length)
         $("#accionesProducto" + idproducto).append(`<button id="botonBorrar${idproducto}"  class="btn claseBorrar neon"  onclick="borrarProductoCarrito(${idproducto})"> Borrar </button>`)
 }
 
 function borrarProductoCarrito(id) {
-
     carro = carro.filter(producto => parseInt(producto.id) !== id)
     actualizarCarrito();
     $("#botonBorrar" + id).remove();
-
 }
 
 function mostrarCarrito() {
