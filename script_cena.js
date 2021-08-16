@@ -13,9 +13,38 @@ let usuario =  localStorage.getItem("nombre")
 let contenedor2 = document.createElement("div");
 contenedor2.classList.add("alert");
 contenedor2.classList.add("alert-secondary");
-
 contenedor2.innerHTML = `<h2 class="usuario"> Que disfrute de su compra Señor/a : ${usuario ? usuario : 'Visitante'} </h2>`
 document.getElementById("usuarioBienvenida").appendChild(contenedor2);
+
+
+$("#menuIndex").prepend(`<button class="btn neon botonesIndex" id="comidasIndex">Comidas </button>
+                                <button class="btn neon botonesIndex" id="bebidasIndex">Bebidas </button>
+                                <button class="btn neon botonesIndex" id="postresIndex">Postres </button>`);
+
+// Asociamos la animación al click en un elemento <a>
+$('#comidasIndex').on('click', function(e) {
+    e.preventDefault();
+    //Animamos sus propiedades CSS con animate
+    $('html, body').animate({
+        scrollTop: $("#comidasMenu").offset().top
+    }, 300);
+} );
+$('#bebidasIndex').on('click', function(e) {
+    e.preventDefault();
+    //Animamos sus propiedades CSS con animate
+    $('html, body').animate({
+        scrollTop: $("#bebidasMenu").offset().top
+    }, 300);
+} );
+
+$('#postresIndex').on('click', function(e) {
+    e.preventDefault();
+    //Animamos sus propiedades CSS con animate
+    $('html, body').animate({
+        scrollTop: $("#postresMenu").offset().top
+    }, 300);
+} );
+
 
 
 let comidas = []

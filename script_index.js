@@ -12,6 +12,8 @@ function solicitarNombre() {
                       <button type="button" onclick="inputUsuario();verificarLogueo()" class="btn btn-primary mb-2">Guardar cliente</button>`
     document.getElementById("usuario").appendChild(div2);
 }
+// Animacion jQuery
+$("#usuario").hide().fadeIn(2000);
 
 function verificarLogueo() {
     if (localStorage.getItem('nombre')) {
