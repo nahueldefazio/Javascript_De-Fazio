@@ -1,4 +1,3 @@
-
 let usuario = ''
 
 
@@ -14,14 +13,13 @@ function solicitarNombre() {
     document.getElementById("usuario").appendChild(div2);
 }
 
-function verificarLogueo(){
-    if(localStorage.getItem('nombre')){
+function verificarLogueo() {
+    if (localStorage.getItem('nombre')) {
         document.getElementById("usuario").innerHTML = ''
         let div = document.createElement("div");
         div.classList.add("usuario_index")
         div.innerHTML = `<h1>Bienvenido/a ${localStorage.getItem('nombre')}</h1>`
         document.getElementById("usuario").appendChild(div);
-        $('#usuario').hide().fadeIn(1000); // ANIMACION JQUERY
     } else {
         solicitarNombre();
     }
@@ -29,15 +27,15 @@ function verificarLogueo(){
 
 verificarLogueo();
 
-const inputUsuario = () =>{
-    if (document.getElementById("nombre").value === ""){
+const inputUsuario = () => {
+    if (document.getElementById("nombre").value === "") {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: '¡No ingreso un nombre!',
 
         })
-    }else {
+    } else {
         usuario = document.getElementById("nombre").value;
         localStorage.setItem("nombre", usuario);
     }

@@ -4,35 +4,10 @@ class Comida {
         this.detalle = detalle;
         this.cantidad = cantidad;
         this.precio = precio;
+
     }
 
 }
-
-$('#comidasIndex').click(function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: $('#comidasMenu').offset().top
-    }, 200)
-})
-
-$('#bebidasIndex').click(function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: $('#bebidasMenu').offset().top
-    }, 400)
-})
-
-$('#postresIndex').click(function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: $('#postresMenu').offset().top
-    }, 300)
-})
-
-
-
-
-
 
 let usuario =  localStorage.getItem("nombre")
 let contenedor2 = document.createElement("div");
@@ -43,128 +18,40 @@ contenedor2.innerHTML = `<h2 class="usuario"> Que disfrute de su compra Señor/a
 document.getElementById("usuarioBienvenida").appendChild(contenedor2);
 
 
-
-let comidas = [
-    {
-        "id": 1,
-        "nombre": "Vacio",
-        "detalle": "Carne",
-        "cantidad": 3,
-        "precio": 990,
-        "imagen" : "../imagenes/vacio.jpg"
-    },
-    {
-        "id": 2,
-        "nombre": "Milanesa",
-        "detalle": "Carne",
-        "cantidad": 2,
-        "precio": 610,
-        "imagen" : "../imagenes/milanesa.jpg"
-    },
-    {
-        "id": 3,
-        "nombre": "Suprema",
-        "detalle": "Pollo",
-        "cantidad": 10,
-        "precio": 610,
-        "imagen" : "../imagenes/suprema.png"
-    },
-    {
-        "id": 4,
-        "nombre": "Filet",
-        "detalle": "Pescado",
-        "cantidad": 4,
-        "precio": 570,
-        "imagen" : "../imagenes/filet.jpg"
-    },
-    {
-        "id": 5,
-        "nombre": "Ravioles",
-        "detalle": "Verdura y pollo",
-        "cantidad": 6,
-        "precio": 700,
-        "imagen" : "../imagenes/ravioles.jpg"
-    }
-]
-let bebidas = [
-    {
-        "id": 6,
-        "nombre": "Agua",
-        "detalle": "Agua mineral Villavicencio",
-        "cantidad": 10,
-        "precio": 110,
-        "imagen" : "../imagenes/agua.jpg"
-    },
-    {
-        "id": 7,
-        "nombre": "Coca-Cola",
-        "detalle": "Gaseosa con sabor original de coca",
-        "cantidad": 8,
-        "precio": 160,
-        "imagen" : "../imagenes/coca.jpg"
-    },
-    {
-        "id": 8,
-        "nombre": "Levite",
-        "detalle": "Agua saborizada",
-        "cantidad": 9,
-        "precio": 170,
-        "imagen" : "../imagenes/levite.jpg"
-    },
-    {
-        "id": 9,
-        "nombre": "Sprite",
-        "detalle": "Gaseosa sabor limalimon",
-        "cantidad": 7,
-        "precio": 160,
-        "imagen" : "../imagenes/sprite.jpg"
-    },
-    {
-        "id": 10,
-        "nombre": "Fanta",
-        "detalle": "Gaseosa sabor naranja",
-        "cantidad": 6,
-        "precio": 160,
-        "imagen" : "../imagenes/fanta.png"
-    },
-]
-let postres = [
-    {
-        "id": 11,
-        "nombre": "Flan",
-        "detalle": "Casero con dulce de leche o crema",
-        "cantidad": 10,
-        "precio": 150,
-        "imagen" : "../imagenes/flan.jpg"
-    },
-    {
-        "id": 12,
-        "nombre": "Budin de pan",
-        "detalle": "Casero con dulce de leche o crema",
-        "cantidad": 10,
-        "precio": 200,
-        "imagen" : "../imagenes/budin_pan.jpeg"
-    },
-    {
-        "id": 13,
-        "nombre": "Zapallo en almibar",
-        "detalle": "Agua saborizada",
-        "cantidad": 10,
-        "precio": 170,
-        "imagen" : "../imagenes/zapallo_almibar.jpg"
-    },
-    {
-        "id": 14,
-        "nombre": "Ensalada de frutas",
-        "detalle": "Casera",
-        "cantidad": 10,
-        "precio": 250,
-        "imagen" : "../imagenes/frutas.jpg"
-    },
-]
+let comidas = []
+let bebidas = []
+let postres = []
 
 
-    function listarProductos(json,nombreDiv, tipo){
+//Peticiones con jQuery
+const URLGET_bebidas = "../data/bebidas_cena.json";
+const URLGET_postres = "../data/postres.json";
+const URLGET_comidas = "../data/comidas_cena.json";
+
+function agregarProductos(URL, array_productos){
+    $.get(URL, function (datos, estado){
+        if(estado == "success"){
+            for (const producto of datos){
+                array_productos.push(producto)
+            }
+        }
+        if (array_productos === comidas)
+            listarProductos(comidas, "cardList","comidas");
+        else if (array_productos === bebidas)
+            listarProductos(bebidas, "cardList2","bebidas");
+        else if (array_productos === postres)
+            listarProductos(postres, "cardList3","postres");
+    })
+
+}
+
+agregarProductos(URLGET_comidas, comidas);
+agregarProductos(URLGET_bebidas, bebidas);
+agregarProductos(URLGET_postres, postres);
+
+
+
+function listarProductos(json,nombreDiv, tipo){
         json.forEach((producto,index) => {
             //Creo
             let contenedor = document.createElement("div");
@@ -186,33 +73,32 @@ let postres = [
                                               </select>
                                               <p class="card-text">${producto.precio} $</p>
                                               <div id = "accionesProducto${producto.id}">
-                                                <a href="#" class="btn btn-primary" onclick="agregarCarrito('${producto.nombre}',${producto.id},${producto.precio},${index}, ${tipo})">Ordenar</a>
+                                                <a href="#" class="btn neon" onclick="agregarCarrito('${producto.nombre}',${producto.id},${producto.precio},${index}, ${tipo})">Ordenar</a>
                                               </div>
                                                
                                           </div>`
             //Agrego
             document.getElementById(nombreDiv).appendChild(contenedor);
-
         })
         //console.log(Object.values(json))
-    }
-listarProductos(comidas, "cardList","comidas");
-listarProductos(bebidas, "cardList2","bebidas");
-listarProductos(postres, "cardList3","postres");
+}
+
+
+
 
 function borrarProductos(nombreDiv){
     document.getElementById(nombreDiv).innerHTML = '';
 }
 
 function consultarStock(productoId,productoIdx,tipo){
-    
     let value = document.getElementById(`producto${productoId}`).value
-
     if(tipo[productoIdx].cantidad <= value){
-        alert('El stock no es suficiente para realizar el pedido');
+        alertify.set('notifier','position', 'top-right');
+        alertify.error('El stock no es suficiente para realizar el pedido');
         return true;
     } else {
-        alert('Pedido procesado');
+        alertify.set('notifier','position', 'top-right');
+        alertify.success('Pedido procesado');
         return false;
     }
 }
@@ -298,7 +184,7 @@ $('.botonCarrito').append(`<span id = "cantidad"> ${mostrarCantidadCarro()} </sp
 
 function mostrarBotonBorrar(idproducto) {
     if (!$("#botonBorrar"+idproducto).length)
-        $("#accionesProducto" + idproducto).append(`<button id="botonBorrar${idproducto}"  class="btn claseBorrar"  onclick="borrarProductoCarrito(${idproducto})"> BORRAR </button>`)
+        $("#accionesProducto" + idproducto).append(`<button id="botonBorrar${idproducto}"  class="btn claseBorrar neon"  onclick="borrarProductoCarrito(${idproducto})"> Borrar </button>`)
 }
 
 function borrarProductoCarrito(id) {

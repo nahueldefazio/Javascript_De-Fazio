@@ -1,0 +1,32 @@
+[{
+  "id": 11,
+  "nombre": "Flan",
+  "detalle": "Casero con dulce de leche o crema",
+  "cantidad": 10,
+  "precio": 150,
+  "imagen" : "../imagenes/flan.jpg"
+},
+{
+"id": 12,
+"nombre": "Budin de pan",
+"detalle": "Casero con dulce de leche o crema",
+"cantidad": 10,
+"precio": 200,
+"imagen" : "../imagenes/budin_pan.jpeg"
+},
+{
+"id": 13,
+"nombre": "Zapallo en almibar",
+"detalle": "Agua saborizada",
+"cantidad": 10,
+"precio": 170,
+"imagen" : "../imagenes/zapallo_almibar.jpg"
+},
+{
+"id": 14,
+"nombre": "Ensalada de frutas",
+"detalle": "Casera",
+"cantidad": 10,
+"precio": 250,
+"imagen" : "../imagenes/frutas.jpg"
+}]

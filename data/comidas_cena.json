@@ -1,0 +1,41 @@
+[{
+  "id": 1,
+  "nombre": "Vacio",
+  "detalle": "Carne",
+  "cantidad": 3,
+  "precio": 990,
+  "imagen" : "../imagenes/vacio.jpg"
+},
+{
+"id": 2,
+"nombre": "Milanesa",
+"detalle": "Carne",
+"cantidad": 2,
+"precio": 610,
+"imagen" : "../imagenes/milanesa.jpg"
+},
+{
+"id": 3,
+"nombre": "Suprema",
+"detalle": "Pollo",
+"cantidad": 10,
+"precio": 610,
+"imagen" : "../imagenes/suprema.png"
+},
+{
+"id": 4,
+"nombre": "Filet",
+"detalle": "Pescado",
+"cantidad": 4,
+"precio": 570,
+"imagen" : "../imagenes/filet.jpg"
+},
+{
+"id": 5,
+"nombre": "Ravioles",
+"detalle": "Verdura y pollo",
+"cantidad": 6,
+"precio": 700,
+"imagen" : "../imagenes/ravioles.jpg"
+}]
+
