@@ -22,9 +22,25 @@
 </head>
 <body>
     <header>
-        <a href="../index.html"><img class="logo" src="../imagenes/bar.jpg" alt="Bar Jose Ingenieros"></a>
+        <nav class="navbar navbar-dark sticky" style="background-color: #91091E;">
+            <div class="container-fluid">
+                <a href="../index.html">
+                    <img src="/imagenes/logo-navbar.png" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse subMenus" id="navbarNavAltMarkup">
+                    <div class="navbar-nav d-flex">
+                        <a class="nav-link active subMenus" aria-current="page" href="../index.html">INICIO</a>
+                        <a class="nav-link subMenus" href="nosotros.html">¿ QUIENES SOMOS ?</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
-
+    <div class="cuerpo">
     <h1 class="tituloPrincipal"> Cena/Almuerzo </h1>
     <div id="usuarioBienvenida"></div>
     <div id="menuIndex"></div>
@@ -52,6 +68,7 @@
     <button class="botonCarrito" onclick="mostrarCarrito()">
         <span class="material-icons"> shopping_cart </span>
     </button>
+    </div>
     <!-- JQuery -->
     <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -69,4 +86,20 @@
     <!-- Mi script -->
     <script type="text/javascript" src="../script_cena.js"></script>
 </body>
+<footer>
+    <div id="redesSociales">
+        <a href="https://www.facebook.com/" target="_blank"> Facebook
+            <img src="../imagenes/facebook_logo_icon_181652.png" alt="facebook" width="50" height="50">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank"> Instagram
+            <img src="../imagenes/instagram_ig_logo_icon_181651.png" alt="instagram" width="50" height="50">
+        </a>
+        <a href="https://wa.me/5491159560376" target="_blank"> WhatsApp
+            <img src="../imagenes/whatsapp_logo_icon_181644.png" alt="whatsapp" width="50" height="50">
+        </a>
+    </div>
+    <div id="derechoAutor">
+        <small>Copyright © Nahuel De Fazio - Frontend Developer</small>
+    </div>
+</footer>
 </html>

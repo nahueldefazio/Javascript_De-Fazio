@@ -17,84 +17,52 @@ contenedor2.classList.add("alert-secondary");
 contenedor2.innerHTML = `<h2 class="usuario"> Que disfrute de su compra Señor/a : ${usuario ? usuario : 'Visitante'} </h2>`
 document.getElementById("usuarioBienvenida").appendChild(contenedor2);
 
+$("#menuIndex").prepend(`<button class="btn neon botonesIndex" id="comidasIndex">Comidas </button>
+                                <button class="btn neon botonesIndex" id="bebidasIndex">Bebidas </button>`);
 
-let bebidas = [
-    {
-        "id": 1,
-        "nombre": "Cafe",
-        "detalle": "Cafe",
-        "cantidad": 10,
-        "precio": 70,
-        "imagen": "../imagenes/cafe.jpg"
-    },
-    {
-        "id": 2,
-        "nombre": "Cafe Irlandes",
-        "detalle": "Cafe con whisky y crema",
-        "cantidad": 6,
-        "precio": 370,
-        "imagen": "../imagenes/cafe_irlandes.jpg"
-    },
-    {
-        "id": 3,
-        "nombre": "Te",
-        "detalle": "Sabor original",
-        "cantidad": 10,
-        "precio": 120,
-        "imagen": "../imagenes/te.jpg"
-    },
-    {
-        "id": 4,
-        "nombre": "Capuchino",
-        "detalle": "Cafe",
-        "cantidad": 4,
-        "precio": 200,
-        "imagen": "../imagenes/capuchino.jpg"
-    },
-    {
-        "id": 5,
-        "nombre": "Submarino",
-        "detalle": "Cafe con chocolate",
-        "cantidad": 6,
-        "precio": 300,
-        "imagen": "../imagenes/submarino.jpeg"
-    },
-]
+// Asociamos la animación al click en un elemento <a>
+$('#comidasIndex').on('click', function(e) {
+    e.preventDefault();
+    //Animamos sus propiedades CSS con animate
+    $('html, body').animate({
+        scrollTop: $("#comidasMenu").offset().top
+    }, 300);
+} );
 
-let comidas = [
-    {
-        "id": 6,
-        "nombre": "Medialunas",
-        "detalle": "Panaderia",
-        "cantidad": 10,
-        "precio": 60,
-        "imagen": "../imagenes/medialunas.jfif"
-    },
-    {
-        "id": 7,
-        "nombre": "Tostado de jamon y queso",
-        "detalle": "Tostado",
-        "cantidad": 7,
-        "precio": 240,
-        "imagen": "../imagenes/tostado_jyq.jpg"
-    },
-    {
-        "id": 8,
-        "nombre": "Tostadas con mermelada",
-        "detalle": "Mermelada de frambuesa o durazno",
-        "cantidad": 6,
-        "precio": 70,
-        "imagen": "../imagenes/tostadas_mermelada.jpg"
-    },
-    {
-        "id": 9,
-        "nombre": "Huevos revueltos",
-        "detalle": "A la plancha",
-        "cantidad": 4,
-        "precio": 130,
-        "imagen": "../imagenes/huevos_revueltos.jpg"
-    },
-]
+$('#bebidasIndex').on('click', function(e) {
+    e.preventDefault();
+    //Animamos sus propiedades CSS con animate
+    $('html, body').animate({
+        scrollTop: $("#bebidasMenu").offset().top
+    }, 300);
+} );
+
+
+
+let bebidas = []
+let comidas = []
+
+//Peticiones con jQuery
+const URLGET_bebidas = "../data/bebidas_desayuno.json";
+const URLGET_comidas = "../data/comidas_desayuno.json";
+
+function agregarProductos(URL, array_productos){
+    $.get(URL, function (datos, estado){
+        if(estado === "success"){
+            for (const producto of datos){
+                array_productos.push(producto)
+            }
+        }
+        if (array_productos === comidas)
+            listarProductos(comidas, "cardList","comidas");
+        else if (array_productos === bebidas)
+            listarProductos(bebidas, "cardList2","bebidas");
+    })
+}
+agregarProductos(URLGET_comidas, comidas)
+agregarProductos(URLGET_bebidas, bebidas)
+
+
 
 function listarProductos(json, nombreDiv, tipo) {
     json.forEach((producto, index) => {
@@ -118,7 +86,7 @@ function listarProductos(json, nombreDiv, tipo) {
                                               </select>
                                               <p class="card-text">${producto.precio} $</p>                                              
                                                <div id = "accionesProducto${producto.id}">
-                                                    <a href="#" class="btn btn-primary" onclick="agregarCarrito('${producto.nombre}',${producto.id},${producto.precio},${index},${tipo})">Ordenar</a>
+                                                    <a href="#" class="btn neon" onclick="agregarCarrito('${producto.nombre}',${producto.id},${producto.precio},${index},${tipo})">Ordenar</a>
                                                </div>
                                           </div>`
         //Agrego
@@ -140,10 +108,12 @@ function consultarStock(productoId, productoIdx, tipo) {
     let value = document.getElementById(`producto${productoId}`).value
     console.log(tipo[productoIdx])
     if (tipo[productoIdx].cantidad <= value) {
-        alert('El stock no es suficiente para realizar el pedido');
+        alertify.set('notifier','position', 'top-right');
+        alertify.error('El stock no es suficiente para realizar el pedido');
         return true;
     } else {
-        alert('Pedido procesado');
+        alertify.set('notifier','position', 'top-right');
+        alertify.success('Pedido procesado');
         return false;
     }
 }
@@ -227,7 +197,7 @@ $('.botonCarrito').append(`<span id = "cantidad"> ${mostrarCantidadCarro()} </sp
 
 function mostrarBotonBorrar(idproducto) {
     if (!$("#botonBorrar" + idproducto).length)
-        $("#accionesProducto" + idproducto).append(`<button id="botonBorrar${idproducto}" class="btn claseBorrar" onclick="borrarProductoCarrito(${idproducto})"> BORRAR </button>`)
+        $("#accionesProducto" + idproducto).append(`<button id="botonBorrar${idproducto}" class="btn claseBorrar neon" onclick="borrarProductoCarrito(${idproducto})"> BORRAR </button>`)
 }
 
 function borrarProductoCarrito(id) {
