@@ -114,6 +114,7 @@ function borrarProductos(nombreDiv){
 
 function consultarStock(productoId,productoIdx,tipo){
     let value = document.getElementById(`producto${productoId}`).value
+    console.log(productoIdx)
     if(tipo[productoIdx].cantidad <= value){
         alertify.set('notifier','position', 'top-right');
         alertify.error('El stock no es suficiente para realizar el pedido');
@@ -148,7 +149,13 @@ function ordenarPorPrecio(productos, string, string_2) {
         });
     }
     borrarProductos(string_2);
-    listarProductos( productos, string_2);
+    if (productos === comidas)
+        listarProductos(comidas, "cardList","comidas");
+    else if (productos === bebidas)
+        listarProductos(bebidas, "cardList2","bebidas");
+    else if (productos === postres)
+        listarProductos(postres, "cardList3","postres");
+
 }
 
 let carro = [];

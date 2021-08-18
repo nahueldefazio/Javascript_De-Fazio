@@ -139,7 +139,11 @@ function ordenarPorPrecio(productos, string, string_2) {
         });
     }
     borrarProductos(string_2);
-    listarProductos(productos, string_2);
+    if (productos === comidas)
+        listarProductos(comidas, "cardList","comidas");
+    else if (productos === bebidas)
+        listarProductos(bebidas, "cardList2","bebidas");
+
 }
 
 let carro = [];
