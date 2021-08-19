@@ -42,7 +42,7 @@ $('#bebidasIndex').on('click', function(e) {
 let bebidas = []
 let comidas = []
 
-//Peticiones con jQuery
+//Peticiones AJAX con jQuery
 const URLGET_bebidas = "../data/bebidas_desayuno.json";
 const URLGET_comidas = "../data/comidas_desayuno.json";
 
