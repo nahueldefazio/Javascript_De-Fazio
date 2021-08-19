@@ -11,9 +11,10 @@ function solicitarNombre() {
                       <input type="text" id = "nombre" class="form-control" placeholder="Ingrese su nombre, porfavor" aria-label="Username" aria-describedby="basic-addon1">
                       <button type="button" onclick="inputUsuario();verificarLogueo()" class="btn btn-primary mb-2">Guardar cliente</button>`
     document.getElementById("usuario").appendChild(div2);
+    // Animacion jQuery
+    $("#usuario").hide().fadeIn(2000);
 }
-// Animacion jQuery
-$("#usuario").hide().fadeIn(2000);
+
 
 function verificarLogueo() {
     if (localStorage.getItem('nombre')) {
@@ -21,6 +22,7 @@ function verificarLogueo() {
         let div = document.createElement("div");
         div.classList.add("usuario_index")
         div.innerHTML = `<h1>Bienvenido/a ${localStorage.getItem('nombre')}</h1>`
+        $("#usuario").hide().fadeIn(2000);
         document.getElementById("usuario").appendChild(div);
     } else {
         solicitarNombre();
