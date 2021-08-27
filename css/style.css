@@ -84,7 +84,7 @@ a:hover {
 }
 
 #index .buttonPrincipal {
-    width: 302px;
+    width: 35%;
     text-align: center;
     display: flex;
     flex-direction: column;

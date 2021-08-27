@@ -98,14 +98,18 @@ function listarProductos(json,nombreDiv, tipo){
                                               </select>
                                               <p class="card-text">${producto.precio} $</p>
                                               <div id = "accionesProducto${producto.id}">
-                                                <a href="#" class="btn neon" onclick="agregarCarrito('${producto.nombre}',${producto.id},${producto.precio},${index}, ${tipo})">Ordenar</a>
+                                                <a class="btn neon" onclick="agregarCarrito('${producto.nombre}',${producto.id},${producto.precio},${index}, ${tipo})">Ordenar</a>
                                               </div>
                                                
                                           </div>`
             //Agrego
             document.getElementById(nombreDiv).appendChild(contenedor);
+            carro.forEach(p =>{
+                if (producto.id === p.id){
+                    mostrarBotonBorrar(producto.id)
+                }
+            })
         })
-        //console.log(Object.values(json))
 }
 
 function borrarProductos(nombreDiv){
@@ -160,6 +164,14 @@ function ordenarPorPrecio(productos, string, string_2) {
 
 let carro = [];
 
+function checkearLocalCarro() {
+    if (localStorage.getItem('carro')){
+        carro = JSON.parse(localStorage.getItem('carro'))
+    }
+}
+
+checkearLocalCarro()
+
 function agregarCarrito(nombre,id,precio,index,tipo) {
     if(consultarStock(id,index,tipo)){
         return;
@@ -174,9 +186,8 @@ function agregarCarrito(nombre,id,precio,index,tipo) {
         carro.push(producto);
         actualizarCarrito()
         mostrarBotonBorrar(id)
-
+        guardarCarro();
     }
-
 }
 
 function calcularTotal() {
@@ -192,6 +203,7 @@ function listaProductos(){
     carro.forEach(producto => {
         listado += producto.cantidad + 'x ' + producto.nombre + "\n";
     })
+    mostrarBotonBorrar();
     return listado ;
 }
 
@@ -219,45 +231,41 @@ function mostrarBotonBorrar(idproducto) {
 function borrarProductoCarrito(id) {
     carro = carro.filter(producto => parseInt(producto.id) !== id)
     actualizarCarrito();
+    guardarCarro();
     $("#botonBorrar" + id).remove();
+}
+
+const guardarCarro = () => {
+    localStorage.setItem('carro', JSON.stringify(carro))
+}
+
+const borrarLocalCarro = () => {
+    carro = [];
+    localStorage.removeItem('carro')
 }
 
 function mostrarCarrito() {
 
-    const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
-        },
-        buttonsStyling: false
-    })
-
-    swalWithBootstrapButtons.fire({
+    Swal.fire({
         title: "Has ordenado " + "\n"  + listaProductos(),
         text: "Total : " + calcularTotal() + " $",
         icon: 'warning',
+        showDenyButton: true,
         showCancelButton: true,
-        confirmButtonText: 'Confirmar',
-        cancelButtonText: 'Cancelar',
-        reverseButtons: true
+        confirmButtonText: `Confirmar`,
+        denyButtonText: `Borrar carrito`,
+        cancelButtonText: `Seguir comprando`
     }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-            swalWithBootstrapButtons.fire({
-                title: 'Gracias',
-                text: 'Tu pedido será procesado en brevedad.',
-                icon: 'success',
-                confirmButtonText: 'Confirmar',
-            }).then((result => {
-                console.log(result);
-                if (result.isConfirmed) {
-                    window.location.href = '../ventanas/contacto.html'
-                }
-            }))
-        } else if (
-            /* Read more about handling dismissals below */
-            result.dismiss === Swal.DismissReason.cancel
-        ) {
-            carrito = [];
+            window.location.href = '../ventanas/contacto.html'
+            borrarLocalCarro()
+        } else if (result.isDenied) {
+            carro = [];
+            actualizarCarrito()
+            borrarLocalCarro()
+            window.location.reload()
+
         }
     })
 }

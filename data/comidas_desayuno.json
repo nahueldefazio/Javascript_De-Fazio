@@ -1,34 +1,35 @@
 [
   {
-  "id": 6,
-  "nombre": "Medialunas",
-  "detalle": "Panaderia",
-  "cantidad": 10,
-  "precio": 60,
-  "imagen": "../imagenes/medialunas.jfif"
+    "id": 6,
+    "nombre": "Medialunas",
+    "detalle": "De manteca, caseras hechas a la mañana",
+    "cantidad": 10,
+    "precio": 60,
+    "imagen": "../imagenes/medialunas.jfif"
   },
   {
-  "id": 7,
-  "nombre": "Tostado de jamon y queso",
-  "detalle": "Tostado",
-  "cantidad": 7,
-  "precio": 240,
-  "imagen": "../imagenes/tostado_jyq.jpg"
+    "id": 7,
+    "nombre": "Tostado de jamon y queso",
+    "detalle": "De la mas alta calidad",
+
+    "cantidad": 7,
+    "precio": 240,
+    "imagen": "../imagenes/tostado_jyq.jpg"
   },
   {
-  "id": 8,
-  "nombre": "Tostadas con mermelada",
-  "detalle": "Mermelada de frambuesa o durazno",
-  "cantidad": 6,
-  "precio": 70,
-  "imagen": "../imagenes/tostadas_mermelada.jpg"
+    "id": 8,
+    "nombre": "Tostadas con mermelada",
+    "detalle": "Mermelada de frambuesa o durazno",
+    "cantidad": 6,
+    "precio": 70,
+    "imagen": "../imagenes/tostadas_mermelada.jpg"
   },
   {
-  "id": 9,
-  "nombre": "Huevos revueltos",
-  "detalle": "A la plancha",
-  "cantidad": 4,
-  "precio": 130,
-  "imagen": "../imagenes/huevos_revueltos.jpg"
+    "id": 9,
+    "nombre": "Huevos revueltos",
+    "detalle": "A la plancha con aceite o manteca",
+    "cantidad": 4,
+    "precio": 130,
+    "imagen": "../imagenes/huevos_revueltos.jpg"
   }
 ]

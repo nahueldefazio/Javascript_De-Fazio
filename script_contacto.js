@@ -86,7 +86,7 @@ $('#contacto').submit(function (e) {
 
     $.post("https://jsonplaceholder.typicode.com/posts", data, function (data, estado){
 
-        if (data['nombre'] !== '' && data['nroTajeta'] !== '' && data['cvv'] !== '' && data['fecha_caducidad'] !== '' && data['dni'] !== ''){
+        if (data.nombre !== '' && data['nroTajeta'] !== '' && data['cvv'] !== '' && data['fecha_caducidad'] !== '' && data['dni'] !== ''){
             if (estado === "success"){
                 Swal.fire({
                     position: 'center',
