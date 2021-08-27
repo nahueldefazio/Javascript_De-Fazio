@@ -2,7 +2,7 @@
   {
   "id": 1,
   "nombre": "Cafe",
-  "detalle": "Cafe",
+  "detalle": "Cafe espresso",
   "cantidad": 10,
   "precio": 70,
   "imagen": "../imagenes/cafe.jpg"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "nombre": "Capuchino",
-    "detalle": "Cafe",
+    "detalle": "Cafe espresso y leche montada con vapor.",
     "cantidad": 4,
     "precio": 200,
     "imagen": "../imagenes/capuchino.jpg"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "nombre": "Submarino",
-    "detalle": "Cafe con chocolate",
+    "detalle": "Una taza de leche caliente con una barra de chocolate",
     "cantidad": 6,
     "precio": 300,
     "imagen": "../imagenes/submarino.jpeg"

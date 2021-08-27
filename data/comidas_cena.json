@@ -1,7 +1,7 @@
 [{
   "id": 1,
-  "nombre": "Vacio",
-  "detalle": "Carne",
+  "nombre": "Vacio con papas al horno",
+  "detalle": "Corte de carne vacuno tiernizado, acompañado con salsa de cebolla y morrones",
   "cantidad": 3,
   "precio": 990,
   "imagen" : "../imagenes/vacio.jpg"
@@ -9,7 +9,7 @@
 {
 "id": 2,
 "nombre": "Milanesa",
-"detalle": "Carne",
+"detalle": "Milanesa de colita de cuadril, empanado con ajo y perejil",
 "cantidad": 2,
 "precio": 610,
 "imagen" : "../imagenes/milanesa.jpg"
@@ -17,23 +17,23 @@
 {
 "id": 3,
 "nombre": "Suprema",
-"detalle": "Pollo",
+"detalle": "Milanesa de pollo, corte de la parte de la pechuga",
 "cantidad": 10,
 "precio": 610,
 "imagen" : "../imagenes/suprema.png"
 },
 {
 "id": 4,
-"nombre": "Filet",
-"detalle": "Pescado",
+"nombre": "Filet de merluza",
+"detalle": "Fresco del dia, empanado",
 "cantidad": 4,
 "precio": 570,
 "imagen" : "../imagenes/filet.jpg"
 },
 {
 "id": 5,
-"nombre": "Ravioles",
-"detalle": "Verdura y pollo",
+"nombre": "Ravioles de verdura y pollo",
+"detalle": "Caseros con salsa a eleccion",
 "cantidad": 6,
 "precio": 700,
 "imagen" : "../imagenes/ravioles.jpg"
