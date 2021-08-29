@@ -23,7 +23,9 @@ $('body').append(`<main id="pagarContacto">
                                 <small id="emailHelp" class="form-text text-muted">Sin puntos ni espacios</small>
                               </div>
                               <div class="d-flex justify-content-center" >
-                                <button id="botonPagar" type="submit" class="btn btn-primary" >Pagar</button>
+                                <button id="botonPagar" type="submit" class="btn btn-primary" >
+                                   Pagar
+                                </button>
                               </div>
                             </form>
                        </main>`)
@@ -75,6 +77,13 @@ $(".nombreCompleto").keypress(function (key) {
     ) return false;
 });
 
+function timerIndex(){
+    setTimeout(()=>{
+        window.location.href = "../index.html"
+    }, 2000 )
+
+}
+
 $('#contacto').submit(function (e) {
     e.preventDefault();
     const inputs = $("#contacto :input");
@@ -88,6 +97,7 @@ $('#contacto').submit(function (e) {
 
         if (data.nombre !== '' && data['nroTajeta'] !== '' && data['cvv'] !== '' && data['fecha_caducidad'] !== '' && data['dni'] !== ''){
             if (estado === "success"){
+                timerIndex();
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -95,6 +105,7 @@ $('#contacto').submit(function (e) {
                     showConfirmButton: false,
                     timer: 1500
                 })
+
             }
         }
 
