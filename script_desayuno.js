@@ -203,7 +203,7 @@ $('.botonCarrito').append(`<span id = "cantidad"> ${mostrarCantidadCarro()} </sp
 
 function mostrarBotonBorrar(idproducto) {
     if (!$("#botonBorrar" + idproducto).length)
-        $("#accionesProducto" + idproducto).append(`<button id="botonBorrar${idproducto}" class="btn claseBorrar neon" onclick="borrarProductoCarrito(${idproducto})"> BORRAR </button>`)
+        $("#accionesProducto" + idproducto).append(`<button id="botonBorrar${idproducto}" class="btn claseBorrar neon" onclick="borrarProductoCarrito(${idproducto})"> Borrar </button>`)
 }
 
 function borrarProductoCarrito(id) {
